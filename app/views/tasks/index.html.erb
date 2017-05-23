@@ -1,0 +1,6 @@
+<h1>The Ultimate To-Do List</h1>
+
+<% @tasks.each do |task| %>
+  <h3> <% link_to task.name, task_path(task) %> </h3>
+  <p> task.completed </p>
+<% end %>
