@@ -1,6 +1,18 @@
 <h1>The Ultimate To-Do List</h1>
 
+<%= link_to "Add A New Task", new_task_path %>
+
 <% @tasks.each do |task| %>
-  <h3> <% link_to task.name, task_path(task) %> </h3>
-  <p> task.completed </p>
+  <h3> <%= link_to task.name, task_path(task) %> </h3>
+
+  <h3>
+    <% if task.completed %>
+      <%= "[X]" %>
+    <% else %>
+      <%= "[ ]" %>
+    <% end %>
+  </h3>
+  <%= link_to "Edit Task", edit_task_path(task) %>
+  <%= link_to "Delete", task_path(task), method: :delete %>
 <% end %>
+

@@ -1,0 +1,12 @@
+<h1>
+  <%= @task.name %>
+
+  <% if @task.completed %>
+    <%= "[X]" %>
+  <% else %>
+    <%= "[ ]" %>
+  <% end %>
+
+</h1>
+
+<%= link_to "Back to Home", tasks_path %>
